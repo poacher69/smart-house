@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+   <title>RPi GPIO Demo</title>
+
+  
+</head>
+<body>
+   <h3>LED1燈控制</h3>
+   <li><a href="/27/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/27/off">Off</a></li>    <!-- 超連結href="到/led/off">網頁顯示off的名稱-->
+   
+   <h3>LED2燈控制</h3>
+   <li><a href="/22/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/22/off">Off</a></li>
+
+   <h3>LED3燈控制</h3>
+   <li><a href="/23/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/23/off">Off</a></li>
+
+   <h3>LED4燈控制</h3>
+   <li><a href="/24/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/24/off">Off</a></li>
+
+
+    <h1>陣列型式印出所有接腳</h1>
+
+   {% for pin in pins %}
+   <p>The {{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+      狀態 on (<a href="/{{pin}}/off">turn off</a>)
+   {% else %}
+      is currently off (<a href="/{{pin}}/on">turn on</a>)
+   {% endif %}
+   </p>
+   {% endfor %}
+
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+   <p>
+    <input type ="button" onclick="javascript:location.href='/'" value="回首頁"></input>
+
+
+
+</body>
+</html>

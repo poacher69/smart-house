@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+   <body>
+       <p>RFID刷卡記錄</p>
+      <table border = 1>
+         <thead>
+            <td>id</td>
+            <td>name</td>
+            <td>date</td>
+            <td>time</td>
+         </thead>
+         
+         {% for row in result %}
+            <tr>
+               <td>{{row["id"]}}</td>
+               <td>{{row["name"]}}</td>
+               <td> {{ row["date"]}}</td>
+               <td> {{ row["time"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/rfid">回RFID頁</a>
+      
+   </body>
+</html>

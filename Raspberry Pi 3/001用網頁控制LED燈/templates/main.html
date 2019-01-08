@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+   <title>RPi GPIO Demo</title>
+</head>
+<body>
+   <h3>LED燈控制</h3>
+   <ul>
+      <li><a href="/led/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+      <li><a href="/led/off">Off</a></li>    <!-- 超連結href="到/led/off">網頁顯示off的名稱-->
+   </ul>
+   <h3>LCD-1602顯示器控制</h3>
+   <form action="/add_data">           <!-- 輸入框超連結action="到/lcd">-start-->
+      name：<input name="name" maxlength="16" /><br/>  <!-- 輸入框 name為變數輸入的值,"line1"為.py要執行的ID,最大輸入16字元-->
+      quantity：<input name="quantity" maxlength="16" /><br/>  <!-- 輸入框 name為變數輸入的值,"line2"為.py要執行的ID,最大輸入16字元-->
+      <button type="submit">Send</button><!-- <按鈕,submit送出上方表單的資料>Send網頁顯示的名稱-->
+   </form>
+</body>
+</html>

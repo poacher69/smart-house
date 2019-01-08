@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+</head>
+<body>
+     <p>請將卡片放置到RFID讀寫器上</p>
+    <form method='post' action={{ url_for('rfid_write') }}>
+    <!--<form表單 method="資料傳送方式一定要小寫" action="送出目的地到python的def login1"><input type='text' name='username1' />-->
+        <p>
+        
+           輸入要寫入RFID卡片的名字(限英文跟數字)<input onkeyup="value=value.replace(/[^\w\.\/]/ig,'') " name='username1' />
+        <!--<輸入框限制只能輸入英文跟數字 username1是送到python的變數名稱-->
+    </p>
+        <p>
+        <button type='submit'>填完送出</button>
+        <input type ="button" onclick="javascript:location.href='/rfid'" value="回RFID頁"></input>
+    </p>
+    </form>
+</body>
+</html>

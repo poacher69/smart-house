@@ -1,0 +1,21 @@
+int Led=13;//定義LED接口
+int Shock=3;//定義震動傳感器接口
+int val;//定義數字變量val
+void setup()
+{
+pinMode(Led,OUTPUT);//定義LED 為輸出接口
+pinMode(Shock,INPUT);//定義震動傳感器為輸出接口
+}
+void loop()
+{
+val=digitalRead(Shock);//將數字接口3的值讀取賦給val
+if(val==HIGH)//當震動傳感器檢測有信號時, LED 閃爍
+{
+digitalWrite(Led,LOW);
+}
+else
+{
+digitalWrite(Led,HIGH);
+}
+}
+

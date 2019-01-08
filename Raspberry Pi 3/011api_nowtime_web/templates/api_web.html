@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data to MySQL</title>
+</head>
+<body>
+<form action="" name="sql" method="get" >
+    id:&emsp;&emsp;&nbsp;&nbsp;<input type="text" name="id"/><p/> <!-- 輸入框 name為變數輸入的值,"id"為.py要執行的ID-->
+    name:&emsp;&nbsp;<input type="text" name="name"/><p/> <!-- 輸入框 name為變數輸入的值,"name"為.py要執行的ID-->
+    date:<input type="text" name="nowdate"/><p/> <!-- 輸入框 name為變數輸入的值,"date"為.py要執行的ID-->
+    time:<input type="text" name="nowtime"/><p/> <!-- 輸入框 name為變數輸入的值,"time"為.py要執行的ID-->
+    <button onclick="add()"/>add data</button>&emsp;        <!-- 按鈕add送出上方表單內容-->
+    <button onclick="update()"/>update_data</button>&emsp;  <!-- 按鈕update送出上方表單內容-->
+    <button onclick="del()"/>delete_data</button>&emsp;     <!-- 按鈕delete送出上方表單內容-->
+</form>
+</body>
+</html>
+
+<!-- Javascript用法 1form,3種不同submit送出表單方法-->
+<script>                                    
+    function add(){
+//        document.("表单的name值").action
+//        document.("表单的name值").submit
+        document.sql.action="add_data";
+        document.sql.submit();
+    }
+    function update() {
+        document.sql.action = "update_data";
+        document.sql.submit();
+    }
+    function del() {
+        document.sql.action = "delete_data";
+        document.sql.submit();
+    }
+</script>

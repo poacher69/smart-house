@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+</head>
+<body>
+     <h3>aaaaaaaaaaa</h3>
+     <p>bbbbbbbbbbbbbbbbbb</p>
+    <form method='post' action={{ url_for('login1') }}>
+    <!--<form表單 method="資料傳送方式一定要小寫" action="送出目的地到python的def login1">-->
+        <p>
+        <input type='text' name='username1' />
+        <!--<輸入框 username1是送到python的變數名稱-->
+    </p>
+        <p>
+        <button type='submit'>Submit</button>
+    </p>
+    </form>
+</body>
+</html>

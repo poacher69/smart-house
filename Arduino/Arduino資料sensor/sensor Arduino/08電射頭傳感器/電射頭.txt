@@ -1,0 +1,11 @@
+void setup() 
+{                
+ pinMode(13, OUTPUT);  //   定義13腳為數字輸出接口
+}
+
+void loop() {
+  digitalWrite(13, HIGH);   // 打開電射頭
+  delay(1000);              // 延時一秒
+  digitalWrite(13, LOW);    // 關閉電射頭
+  delay(1000);              // 延時一秒
+}

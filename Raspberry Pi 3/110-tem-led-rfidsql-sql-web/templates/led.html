@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+   <title>RPi GPIO Demo</title>
+
+  
+</head>
+<body>
+   <h3>1F浴室燈</h3>
+   <li><a href="/27/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/27/off">Off</a></li>    <!-- 超連結href="到/led/off">網頁顯示off的名稱-->
+   
+   <h3>1F書房燈</h3>
+   <li><a href="/22/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/22/off">Off</a></li>
+
+   <h3>2F臥室燈</h3>
+   <li><a href="/23/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/23/off">Off</a></li>
+
+   <h3>2F臥室FAN</h3>
+   <li><a href="/24/on">On</a></li>      <!-- 超連結href="到/led/on">網頁顯示On的名稱-->
+   <li><a href="/24/off">Off</a></li>
+
+
+    <h1>各房間燈即時狀態</h1>
+
+   {% for pin in pins %}                  <!-- for循環定義pin=python檔的pins字典-->
+   <p>The {{ pins[pin].name }}            <!-- The 印出python檔的pins字典裡的'name'-->
+   {% if pins[pin].state == true %}       <!-- 偵測python檔裡的接腳HIGH,LOW -->
+      目前狀態 on (<a href="/{{pin}}/off">turn off</a>)
+   {% else %}
+      目前狀態 off (<a href="/{{pin}}/on">turn on</a>)
+   {% endif %}
+   </p>
+   {% endfor %}
+
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+   <p>
+    <input type ="button" onclick="javascript:location.href='/'" value="回首頁"></input>
+
+
+
+</body>
+</html>
